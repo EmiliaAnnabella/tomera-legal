@@ -69,7 +69,7 @@ button:focus-visible{
   gap:1rem;
   flex-wrap:wrap;
 }
-.mark{display:block;height:46px;width:auto}
+.mark{display:block;height:56px;width:auto}
 .status{
   font-size:.8125rem;
   letter-spacing:.08em;
@@ -90,21 +90,28 @@ button:focus-visible{
   margin:0 0 1.5rem;
 }
 
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,460px);
+  gap:4rem;
+  align-items:center;
+}
+
 .hero h1{
   font-family:ui-serif,"New York",Georgia,serif;
   font-weight:400;
-  font-size:clamp(2.6rem,7vw,4.6rem);
-  line-height:1.04;
+  font-size:clamp(2.3rem,5vw,3.6rem);
+  line-height:1.06;
   letter-spacing:-.015em;
   margin:0 0 1.5rem;
-  max-width:14ch;
+  max-width:12ch;
 }
 
 .lede{
   font-size:clamp(1.15rem,2.2vw,1.4rem);
   line-height:1.45;
   max-width:32ch;
-  margin:0 0 3.25rem;
+  margin:0 0 2rem;
   color:var(--ink);
 }
 .lede .second{display:block;color:var(--ink-soft)}
@@ -116,7 +123,7 @@ button:focus-visible{
   height:10px;
   border-radius:999px;
   overflow:hidden;
-  margin:0 0 .875rem;
+  margin:4.5rem 0 .875rem;
 }
 .band span{display:block}
 .band .m{flex:5;background:var(--menstrual)}
@@ -128,7 +135,7 @@ button:focus-visible{
   display:flex;
   flex-wrap:wrap;
   gap:.4rem 1.25rem;
-  margin:0 0 3rem;
+  margin:0;
   padding:0;
   list-style:none;
   font-size:.8125rem;
@@ -148,10 +155,8 @@ button:focus-visible{
 .pair{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:2.5rem;
+  gap:1.5rem;
   align-items:start;
-  max-width:34rem;
-  padding-bottom:1rem;
 }
 
 .screen figcaption{
@@ -180,8 +185,8 @@ button:focus-visible{
 }
 
 .pair-note{
-  margin:2rem 0 0;
-  max-width:46ch;
+  margin:0;
+  max-width:40ch;
   color:var(--ink-soft);
   font-size:1rem;
 }
@@ -374,13 +379,14 @@ button:focus-visible{
   .split.flip .split-media{order:2}
   .split-media{max-width:270px}
   .hero{padding-top:2.5rem}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:2.5rem}
+  .band{margin-top:3rem}
   .rule{margin-top:3.5rem}
   .section{padding-top:3rem}
 }
 
-@media (max-width:460px){
-  .pair{grid-template-columns:minmax(0,1fr)}
-  .screen + .screen{margin-top:1rem}
+@media (max-width:420px){
+  .pair{grid-template-columns:minmax(0,1fr);gap:2rem;max-width:16rem}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -402,12 +408,40 @@ button:focus-visible{
 
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Cycle-based strength training</p>
-      <h1>Your body. Your strength. Your terms.</h1>
-      <p class="lede">
-        Training that adapts to your cycle.
-        <span class="second">And shows you the reasoning.</span>
-      </p>
+      <div class="hero-grid">
+
+        <div class="hero-text">
+          <p class="eyebrow">Cycle-based strength training</p>
+          <h1>Your body. Your strength. Your terms.</h1>
+          <p class="lede">
+            Training that adapts to your cycle.
+            <span class="second">And shows you the reasoning.</span>
+          </p>
+          <p class="pair-note">
+            Same person, same programme, two points in the same cycle. The app
+            reads where you are and changes what it asks of you.
+          </p>
+        </div>
+
+        <div class="pair">
+          <figure class="screen" style="margin:0">
+            <figcaption>
+              <span class="day"><span class="dot m"></span>Day 1</span>
+              <span class="say">Your period is here, so today is gentler.</span>
+            </figcaption>
+            <img class="shot" src="today-menstrual.png" alt="The Tomera home screen on day 1, showing menstruation, lower energy, and a gentler session planned.">
+          </figure>
+
+          <figure class="screen" style="margin:0">
+            <figcaption>
+              <span class="day"><span class="dot f"></span>Day 10</span>
+              <span class="say">Energy is high, so today builds toward your targets.</span>
+            </figcaption>
+            <img class="shot" src="today-follicular.png" alt="The Tomera home screen on day 10, showing the follicular phase, high energy, and a full session planned.">
+          </figure>
+        </div>
+
+      </div>
 
       <div class="band" role="img" aria-label="A cycle shown as four phases: menstrual, follicular, ovulation, luteal.">
         <span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span>
@@ -418,35 +452,8 @@ button:focus-visible{
         <li><span class="dot o"></span>Ovulation</li>
         <li><span class="dot l"></span>Luteal</li>
       </ul>
-
-      <div class="pair">
-        <figure class="screen" style="margin:0">
-          <figcaption>
-            <span class="day"><span class="dot f"></span>Day 10</span>
-            <span class="say">Energy is high, so the session builds toward your targets.</span>
-          </figcaption>
-          <img class="shot" src="today-follicular.png" alt="The Tomera home screen on day 10, showing the follicular phase, high energy, and a full session planned.">
-        </figure>
-
-        <figure class="screen" style="margin:0">
-          <figcaption>
-            <span class="day"><span class="dot m"></span>Day 1</span>
-            <span class="say">Your period is here, so today is a gentler session.</span>
-          </figcaption>
-          <img class="shot" src="today-menstrual.png" alt="The Tomera home screen on day 1, showing menstruation, lower energy, and a gentler session planned.">
-        </figure>
-      </div>
-
-      <p class="pair-note">
-        Same person, same programme, two points in the same cycle. The app reads
-        where you are and changes what it asks of you.
-      </p>
     </div>
   </section>
-
-  <div class="wrap">
-    <div class="rule"><span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span></div>
-  </div>
 
   <section class="section">
     <div class="wrap">

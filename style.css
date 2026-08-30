@@ -1,114 +1,173 @@
-:root {
-  --bg: #FAF8F5;
-  --text: #4A4340;
-  --muted: #8A817C;
-  --accent: #BE7B5E;
-  --rule: #E8E2DB;
+:root{
+  --paper:#F7F4EF;
+  --card:#EBE5DC;
+  --ink:#33302D;
+  --ink-soft:#6B645E;
+  --clay:#B0603C;
+  --line:#DED6CA;
+
+  --menstrual:#C9857D;
+  --follicular:#A9BE9B;
+  --ovulation:#A9BBD1;
+  --luteal:#E0CDB0;
 }
 
-* { box-sizing: border-box; }
+*{box-sizing:border-box}
 
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.65;
-  -webkit-text-size-adjust: 100%;
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
 }
 
-.wrap {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 48px 24px 96px;
+.wrap{
+  max-width:44rem;
+  margin:0 auto;
+  padding:2.25rem 1.5rem 6rem;
 }
 
-header {
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 24px;
-  margin-bottom: 40px;
+/* ---------- header ---------- */
+
+header{
+  position:relative;
+  padding-bottom:2rem;
+  margin-bottom:2.75rem;
 }
 
-.brand {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  text-decoration: none;
-  display: inline-block;
+/* The cycle band from the landing page, in true 28-day proportions. */
+header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:3px;
+  border-radius:999px;
+  background:linear-gradient(
+    to right,
+    var(--menstrual) 0 17.86%,
+    var(--follicular) 17.86% 46.43%,
+    var(--ovulation) 46.43% 57.14%,
+    var(--luteal) 57.14% 100%
+  );
 }
 
-.brand span { color: var(--accent); }
-
-h1 {
-  font-size: 30px;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin: 24px 0 8px;
-  font-weight: 600;
+.brand{
+  display:inline-block;
+  line-height:0;
+}
+.brand img{
+  display:block;
+  height:44px;
+  width:auto;
 }
 
-.updated {
-  font-size: 14px;
-  color: var(--muted);
-  margin: 0;
+h1{
+  font-family:ui-serif,"New York",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2rem,5vw,2.8rem);
+  line-height:1.1;
+  letter-spacing:-.015em;
+  margin:2rem 0 .5rem;
 }
 
-.langswitch {
-  margin-top: 20px;
-  font-size: 15px;
+.updated{
+  font-size:.875rem;
+  color:var(--ink-soft);
+  margin:0;
 }
 
-.langswitch a {
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+.langswitch{
+  margin-top:1.25rem;
+  font-size:.9375rem;
+}
+.langswitch a{
+  color:var(--clay);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.langswitch a:hover{border-bottom-color:var(--clay)}
+.langswitch .current{color:var(--ink-soft)}
+
+/* ---------- body copy ---------- */
+
+h2{
+  font-family:ui-serif,"New York",Georgia,serif;
+  font-weight:400;
+  font-size:1.5rem;
+  line-height:1.25;
+  letter-spacing:-.01em;
+  margin:3rem 0 .875rem;
 }
 
-.langswitch a:hover { border-bottom-color: var(--accent); }
+p{margin:0 0 1rem}
 
-.langswitch .current { color: var(--muted); }
+strong{font-weight:600}
 
-h2 {
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin: 44px 0 12px;
+ul{
+  margin:0 0 1rem;
+  padding-left:1.35rem;
+}
+li{margin-bottom:.5rem}
+
+.addr{
+  white-space:pre-line;
+  background:var(--card);
+  border-radius:14px;
+  padding:1.15rem 1.35rem;
+  margin:0 0 1rem;
+  font-size:.9375rem;
+  line-height:1.55;
 }
 
-p { margin: 0 0 16px; }
+a{color:var(--clay)}
 
-ul {
-  margin: 0 0 16px;
-  padding-left: 22px;
+a:focus-visible{
+  outline:2px solid var(--clay);
+  outline-offset:3px;
+  border-radius:2px;
 }
 
-li { margin-bottom: 8px; }
+/* ---------- footer ---------- */
 
-.addr {
-  white-space: pre-line;
-  margin: 0 0 16px;
+footer{
+  border-top:1px solid var(--line);
+  margin-top:4.5rem;
+  padding-top:2rem;
+  font-size:.9375rem;
+  color:var(--ink-soft);
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem 1.75rem;
+  align-items:baseline;
+  justify-content:space-between;
 }
 
-a { color: var(--accent); }
+footer .copy{margin:0}
 
-footer {
-  border-top: 1px solid var(--rule);
-  margin-top: 64px;
-  padding-top: 24px;
-  font-size: 14px;
-  color: var(--muted);
+footer nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem 1.75rem;
 }
 
-footer a {
-  color: var(--muted);
-  margin-right: 16px;
+footer a{
+  color:var(--ink-soft);
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
+footer a:hover{color:var(--clay)}
 
-@media (max-width: 600px) {
-  .wrap { padding: 32px 20px 72px; }
-  h1 { font-size: 26px; }
-  body { font-size: 16px; }
+@media (max-width:600px){
+  .wrap{padding:1.75rem 1.25rem 4.5rem}
+  body{font-size:16px}
+  .brand img{height:38px}
+  h2{font-size:1.35rem;margin-top:2.5rem}
 }
