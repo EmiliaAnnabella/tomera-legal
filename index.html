@@ -3,34 +3,585 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tomera — Legal</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="wrap">
+<title>Tomera · Cycle-based strength training</title>
+<meta name="description" content="Strength training that adapts to your cycle and shows you the reasoning behind every set. Built for PCOS, endometriosis, irregular cycles, hormonal contraception and perimenopause. Your data stays on your phone.">
+<link rel="canonical" href="https://tomera.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tomera · Cycle-based strength training">
+<meta property="og:description" content="Training that adapts to your cycle. And shows you the reasoning.">
+<meta property="og:url" content="https://tomera.app/">
 
-<header>
-  <a class="brand" href="index.html">tomera<span>.</span></a>
-  <h1>Legal</h1>
-  <p class="updated">cycle-based strength training.</p>
+<style>
+:root{
+  --paper:#F7F4EF;
+  --card:#EBE5DC;
+  --ink:#33302D;
+  --ink-soft:#6B645E;
+  --clay:#B0603C;
+  --line:#DED6CA;
+
+  --menstrual:#C9857D;
+  --follicular:#A9BE9B;
+  --ovulation:#A9BBD1;
+  --luteal:#E0CDB0;
+
+  --measure:66rem;
+}
+
+*{box-sizing:border-box}
+
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{
+  width:100%;
+  max-width:var(--measure);
+  margin:0 auto;
+  padding:0 1.5rem;
+}
+
+a{color:var(--clay)}
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--clay);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead{
+  padding:2.25rem 0 1rem;
+}
+.masthead .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.mark{display:block;height:34px;width:auto}
+.status{
+  font-size:.8125rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+/* ---------- hero ---------- */
+
+.hero{padding:3.5rem 0 0}
+
+.eyebrow{
+  font-size:.8125rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0 0 1.5rem;
+}
+
+.hero h1{
+  font-family:ui-serif,"New York",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2.6rem,7vw,4.6rem);
+  line-height:1.04;
+  letter-spacing:-.015em;
+  margin:0 0 1.5rem;
+  max-width:14ch;
+}
+
+.lede{
+  font-size:clamp(1.15rem,2.2vw,1.4rem);
+  line-height:1.45;
+  max-width:32ch;
+  margin:0 0 3.25rem;
+  color:var(--ink);
+}
+.lede .second{color:var(--ink-soft)}
+
+/* ---------- phase band (signature) ---------- */
+
+.band{
+  display:flex;
+  height:10px;
+  border-radius:999px;
+  overflow:hidden;
+  margin:0 0 .875rem;
+}
+.band span{display:block}
+.band .m{flex:5;background:var(--menstrual)}
+.band .f{flex:8;background:var(--follicular)}
+.band .o{flex:3;background:var(--ovulation)}
+.band .l{flex:12;background:var(--luteal)}
+
+.band-key{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem 1.25rem;
+  margin:0 0 3rem;
+  padding:0;
+  list-style:none;
+  font-size:.8125rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.band-key li{display:flex;align-items:center;gap:.45rem}
+.dot{width:9px;height:9px;border-radius:999px;display:inline-block}
+.dot.m{background:var(--menstrual)}
+.dot.f{background:var(--follicular)}
+.dot.o{background:var(--ovulation)}
+.dot.l{background:var(--luteal)}
+
+/* ---------- paired screens ---------- */
+
+.pair{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:2rem;
+  align-items:start;
+  padding-bottom:1rem;
+}
+
+.screen figcaption{
+  margin:0 0 1rem;
+  font-size:.9375rem;
+  line-height:1.4;
+}
+.screen .day{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.8125rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0 0 .35rem;
+}
+.screen .say{color:var(--ink)}
+
+.shot{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:22px;
+  border:1px solid var(--line);
+}
+
+.pair-note{
+  margin:2rem 0 0;
+  max-width:46ch;
+  color:var(--ink-soft);
+  font-size:1rem;
+}
+
+/* ---------- rules and sections ---------- */
+
+.rule{
+  display:flex;
+  height:3px;
+  border-radius:999px;
+  overflow:hidden;
+  margin:5rem 0 0;
+  opacity:.85;
+}
+.rule span{display:block}
+.rule .m{flex:5;background:var(--menstrual)}
+.rule .f{flex:8;background:var(--follicular)}
+.rule .o{flex:3;background:var(--ovulation)}
+.rule .l{flex:12;background:var(--luteal)}
+
+.section{padding:4rem 0 0}
+
+.section h2{
+  font-family:ui-serif,"New York",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(1.9rem,4vw,2.9rem);
+  line-height:1.12;
+  letter-spacing:-.01em;
+  margin:0 0 1.25rem;
+  max-width:20ch;
+}
+
+.section p{
+  max-width:52ch;
+  margin:0 0 1.25rem;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,320px);
+  gap:3.5rem;
+  align-items:start;
+}
+.split.flip{grid-template-columns:minmax(0,320px) minmax(0,1fr)}
+.split.flip .split-text{order:2}
+.split.flip .split-media{order:1}
+
+.conditions{
+  font-family:ui-serif,"New York",Georgia,serif;
+  font-size:clamp(1.25rem,2.6vw,1.6rem);
+  line-height:1.35;
+  margin:0 0 1.5rem;
+  max-width:22ch;
+}
+
+.floor{
+  background:var(--card);
+  border-radius:18px;
+  padding:1.5rem 1.75rem;
+  margin:2rem 0 0;
+  max-width:52ch;
+}
+.floor p{margin:0;max-width:none}
+.floor strong{font-weight:600}
+
+/* ---------- privacy ---------- */
+
+.privacy{
+  padding:4rem 0 0;
+}
+.privacy p{
+  font-family:ui-serif,"New York",Georgia,serif;
+  font-size:clamp(1.5rem,3.4vw,2.1rem);
+  line-height:1.25;
+  max-width:24ch;
+  margin:0 0 1rem;
+}
+.privacy .sub{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+  max-width:46ch;
+}
+
+/* ---------- signup ---------- */
+
+.visually-hidden{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
+}
+
+.signup-form{max-width:36rem;margin:2rem 0 0}
+
+.field-row{
+  display:flex;
+  gap:.75rem;
+  flex-wrap:wrap;
+}
+
+.field-row input[type=email]{
+  flex:1 1 16rem;
+  min-width:0;
+  font:inherit;
+  color:var(--ink);
+  background:#FFFDFA;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:.85rem 1rem;
+}
+.field-row input[type=email]::placeholder{color:#A79E95}
+.field-row input[type=email]:focus-visible{
+  outline:2px solid var(--clay);
+  outline-offset:1px;
+  border-color:var(--clay);
+}
+
+.field-row button{
+  font:inherit;
+  font-weight:600;
+  color:#FFFDFA;
+  background:var(--clay);
+  border:1px solid var(--clay);
+  border-radius:12px;
+  padding:.85rem 1.5rem;
+  cursor:pointer;
+}
+.field-row button:hover{background:#9C5334;border-color:#9C5334}
+
+.check{
+  display:flex;
+  align-items:flex-start;
+  gap:.65rem;
+  margin:1.15rem 0 0;
+  font-size:.9375rem;
+  line-height:1.5;
+  color:var(--ink-soft);
+  cursor:pointer;
+}
+.check input{
+  margin:.25rem 0 0;
+  width:1.05rem;
+  height:1.05rem;
+  accent-color:var(--clay);
+  flex:none;
+}
+.check a{color:var(--clay)}
+
+.trap{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+/* ---------- footer ---------- */
+
+.foot{
+  margin-top:5rem;
+  border-top:1px solid var(--line);
+  padding:2rem 0 3.5rem;
+  font-size:.9375rem;
+  color:var(--ink-soft);
+}
+.foot .wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem 1.75rem;
+  align-items:baseline;
+  justify-content:space-between;
+}
+.foot nav{display:flex;flex-wrap:wrap;gap:.75rem 1.75rem}
+.foot a{color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px}
+.foot a:hover{color:var(--clay)}
+.foot .copy{margin:0}
+
+/* ---------- responsive ---------- */
+
+@media (max-width:760px){
+  .pair{gap:1.5rem}
+  .split,
+  .split.flip{grid-template-columns:minmax(0,1fr);gap:2rem}
+  .split.flip .split-text{order:1}
+  .split.flip .split-media{order:2}
+  .split-media{max-width:300px}
+  .hero{padding-top:2.5rem}
+  .rule{margin-top:3.5rem}
+  .section{padding-top:3rem}
+}
+
+@media (max-width:460px){
+  .pair{grid-template-columns:minmax(0,1fr)}
+  .screen + .screen{margin-top:1rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <img class="mark" src="tomera_lockup_horizontal_light.svg" alt="Tomera">
+    <p class="status">Coming to the App Store</p>
+  </div>
 </header>
 
-<h2>Documents</h2>
-<ul>
-<li><a href="privacy.html">Privacy Policy</a> (English)</li>
-<li><a href="datenschutz.html">Datenschutzerklärung</a> (Deutsch)</li>
-<li><a href="impressum.html">Impressum</a></li>
-</ul>
+<main>
 
-<h2>Contact</h2>
-<p>Email: <a href="mailto:privacy@tomera.app">privacy@tomera.app</a></p>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Cycle-based strength training</p>
+      <h1>Your body. Your strength. Your terms.</h1>
+      <p class="lede">
+        Training that adapts to your cycle.
+        <span class="second">And shows you the reasoning.</span>
+      </p>
 
-<footer>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="datenschutz.html">Datenschutz</a>
-  <a href="impressum.html">Impressum</a>
+      <div class="band" role="img" aria-label="A cycle shown as four phases: menstrual, follicular, ovulation, luteal.">
+        <span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span>
+      </div>
+      <ul class="band-key">
+        <li><span class="dot m"></span>Menstrual</li>
+        <li><span class="dot f"></span>Follicular</li>
+        <li><span class="dot o"></span>Ovulation</li>
+        <li><span class="dot l"></span>Luteal</li>
+      </ul>
+
+      <div class="pair">
+        <figure class="screen" style="margin:0">
+          <figcaption>
+            <span class="day"><span class="dot f"></span>Day 10</span>
+            <span class="say">Energy is high, so the session builds toward your targets.</span>
+          </figcaption>
+          <img class="shot" src="today-follicular.png" alt="The Tomera home screen on day 10, showing the follicular phase, high energy, and a full session planned.">
+        </figure>
+
+        <figure class="screen" style="margin:0">
+          <figcaption>
+            <span class="day"><span class="dot m"></span>Day 1</span>
+            <span class="say">Your period is here, so today is a gentler session.</span>
+          </figcaption>
+          <img class="shot" src="today-menstrual.png" alt="The Tomera home screen on day 1, showing menstruation, lower energy, and a gentler session planned.">
+        </figure>
+      </div>
+
+      <p class="pair-note">
+        Same person, same programme, two points in the same cycle. The app reads
+        where you are and changes what it asks of you.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="rule"><span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span></div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="split-text">
+          <h2>Every number comes with its reasoning.</h2>
+          <p>
+            Most training apps hand you a set and a rep count and leave you to
+            guess where they came from. Tomera shows the decision: what you did
+            last time, what it is holding, what it changed today, and what would
+            move the target up.
+          </p>
+          <p>
+            The rules are fixed and readable. Nothing is a black box, and nothing
+            progresses while you are reporting pain.
+          </p>
+        </div>
+        <div class="split-media">
+          <img class="shot" src="reasoning.png" alt="An exercise screen explaining why today's target is 9 to 13 reps, with coaching cues, common mistakes, and what to do if something hurts.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="rule"><span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span></div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split flip">
+        <div class="split-text">
+          <h2>Strength training built for cycles that don't behave.</h2>
+          <p class="conditions">
+            PCOS. Endometriosis. Irregular cycles. Hormonal contraception.
+            Perimenopause.
+          </p>
+          <p>
+            If your cycle doesn't run to a textbook 28 days, the app adjusts
+            today's session instead of guessing. It learns your actual cycle
+            length from what you log, and it tells you when it is estimating
+            rather than pretending to be certain.
+          </p>
+
+          <div class="floor">
+            <p>
+              <strong>No cycle to track?</strong> The app still adapts to your
+              symptoms, pain, and energy. Phase-based adjustments appear only
+              where there's a real cycle to read them from.
+            </p>
+          </div>
+        </div>
+        <div class="split-media">
+          <img class="shot" src="progression.png" alt="A per-exercise progress chart showing reps climbing over three months, with each session coloured by the cycle phase it fell in.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="rule"><span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span></div>
+  </div>
+
+  <section class="privacy">
+    <div class="wrap">
+      <p>Your training and cycle data stay on your phone.</p>
+      <p class="sub">
+        No account, no upload, no sign-up. Tomera works entirely offline, and you
+        can export everything you have logged at any time.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="rule"><span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span></div>
+  </div>
+
+  <section class="section signup">
+    <div class="wrap">
+      <h2>Hear when it launches.</h2>
+      <p>
+        One email when Tomera reaches the App Store, and occasional notes on what
+        is being built. Nothing else, and you can unsubscribe from any of them.
+      </p>
+
+      <form class="signup-form" method="POST" action="https://997e5c6c.sibforms.com/serve/MUIFAInjLkI9BZ-_YHcJpXrPfrME7gpY-C5KtAcmL5wEEbNbIvtaREf4I5l1dRZqAfcch8onMNO19d3HGkPSOKheLhPxkEoBjYmm0zHOeNOYe56IjKCn996uexb-MR3R1acwbJ0tjDbsF9t0eUaotpARieKh8zZwSJwTjdTZuwRWr3pZIW7mYd5KVzApCqODuahFCHlXtdinkGbeCw==">
+        <div class="field-row">
+          <label class="visually-hidden" for="EMAIL">Email address</label>
+          <input
+            id="EMAIL"
+            type="email"
+            name="EMAIL"
+            required
+            autocomplete="email"
+            placeholder="you@example.com">
+          <button type="submit">Keep me posted</button>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="BETA" name="BETA" value="1">
+          <span>I would also like to help test the beta.</span>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" required>
+          <span>
+            I agree to receive these emails and have read the
+            <a href="/privacy.html">privacy policy</a>. You will get a confirmation
+            email first, and nothing is sent until you click the link in it.
+          </span>
+        </label>
+
+        <!-- Anti-spam honeypot. Hidden from people, filled in by bots. Do not remove. -->
+        <div class="trap" aria-hidden="true">
+          <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+        </div>
+
+        <input type="hidden" name="locale" value="en">
+        <input type="hidden" name="html_type" value="simple">
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="copy">&copy; 2026 Emilia Radmacher</p>
+    <nav>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="mailto:privacy@tomera.app">privacy@tomera.app</a>
+    </nav>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>

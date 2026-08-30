@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check your inbox · Tomera</title>
+<meta name="robots" content="noindex">
+
+<style>
+:root{
+  --paper:#F7F4EF;
+  --card:#EBE5DC;
+  --ink:#33302D;
+  --ink-soft:#6B645E;
+  --clay:#B0603C;
+  --line:#DED6CA;
+
+  --menstrual:#C9857D;
+  --follicular:#A9BE9B;
+  --ovulation:#A9BBD1;
+  --luteal:#E0CDB0;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{
+  width:100%;
+  max-width:66rem;
+  margin:0 auto;
+  padding:0 1.5rem;
+}
+
+a{color:var(--clay)}
+a:focus-visible{outline:2px solid var(--clay);outline-offset:3px;border-radius:2px}
+
+.masthead{padding:2.25rem 0 1rem}
+.mark{display:block;height:34px;width:auto}
+
+main{flex:1 0 auto;padding:4.5rem 0 0}
+
+h1{
+  font-family:ui-serif,"New York",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2.2rem,5.5vw,3.4rem);
+  line-height:1.08;
+  letter-spacing:-.015em;
+  margin:0 0 1.5rem;
+  max-width:16ch;
+}
+
+p{max-width:50ch;margin:0 0 1.25rem}
+.soft{color:var(--ink-soft)}
+
+.band{
+  display:flex;
+  height:10px;
+  border-radius:999px;
+  overflow:hidden;
+  margin:0 0 2.75rem;
+  max-width:24rem;
+}
+.band span{display:block}
+.band .m{flex:5;background:var(--menstrual)}
+.band .f{flex:8;background:var(--follicular)}
+.band .o{flex:3;background:var(--ovulation)}
+.band .l{flex:12;background:var(--luteal)}
+
+.back{
+  display:inline-block;
+  margin:1.5rem 0 0;
+  font-weight:600;
+  text-decoration:none;
+  border-bottom:2px solid var(--clay);
+  padding-bottom:2px;
+}
+
+.foot{
+  flex:none;
+  margin-top:5rem;
+  border-top:1px solid var(--line);
+  padding:2rem 0 3.5rem;
+  font-size:.9375rem;
+  color:var(--ink-soft);
+}
+.foot .wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem 1.75rem;
+  align-items:baseline;
+  justify-content:space-between;
+}
+.foot nav{display:flex;flex-wrap:wrap;gap:.75rem 1.75rem}
+.foot a{color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px}
+.foot a:hover{color:var(--clay)}
+.foot .copy{margin:0}
+
+@media (max-width:760px){
+  main{padding-top:3rem}
+}
+</style>
+</head>
+
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a href="/"><img class="mark" src="tomera_lockup_horizontal_light.svg" alt="Tomera"></a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="band" role="presentation">
+      <span class="m"></span><span class="f"></span><span class="o"></span><span class="l"></span>
+    </div>
+
+    <h1>One more step. Check your inbox.</h1>
+
+    <p>
+      An email is on its way asking you to confirm. Click the link in it and you
+      are on the list. Until you do, nothing is sent.
+    </p>
+
+    <p class="soft">
+      If it has not arrived in a few minutes, look in your spam folder. Some
+      providers are slow with a first message from a new sender.
+    </p>
+
+    <a class="back" href="/">Back to the start</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="copy">&copy; 2026 Emilia Radmacher</p>
+    <nav>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/impressum.html">Impressum</a>
+      <a href="mailto:privacy@tomera.app">privacy@tomera.app</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
