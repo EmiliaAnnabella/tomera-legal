@@ -69,7 +69,7 @@ button:focus-visible{
   gap:1rem;
   flex-wrap:wrap;
 }
-.mark{display:block;height:34px;width:auto}
+.mark{display:block;height:46px;width:auto}
 .status{
   font-size:.8125rem;
   letter-spacing:.08em;
@@ -107,7 +107,7 @@ button:focus-visible{
   margin:0 0 3.25rem;
   color:var(--ink);
 }
-.lede .second{color:var(--ink-soft)}
+.lede .second{display:block;color:var(--ink-soft)}
 
 /* ---------- phase band (signature) ---------- */
 
@@ -148,8 +148,9 @@ button:focus-visible{
 .pair{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:2rem;
+  gap:2.5rem;
   align-items:start;
+  max-width:34rem;
   padding-bottom:1rem;
 }
 
@@ -220,11 +221,11 @@ button:focus-visible{
 
 .split{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,320px);
+  grid-template-columns:minmax(0,1fr) minmax(0,270px);
   gap:3.5rem;
   align-items:start;
 }
-.split.flip{grid-template-columns:minmax(0,320px) minmax(0,1fr)}
+.split.flip{grid-template-columns:minmax(0,270px) minmax(0,1fr)}
 .split.flip .split-text{order:2}
 .split.flip .split-media{order:1}
 
@@ -371,7 +372,7 @@ button:focus-visible{
   .split.flip{grid-template-columns:minmax(0,1fr);gap:2rem}
   .split.flip .split-text{order:1}
   .split.flip .split-media{order:2}
-  .split-media{max-width:300px}
+  .split-media{max-width:270px}
   .hero{padding-top:2.5rem}
   .rule{margin-top:3.5rem}
   .section{padding-top:3rem}
